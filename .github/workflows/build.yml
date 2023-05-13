@@ -1,0 +1,17 @@
+name: Build
+on: # rebuild any PRs and main branch changes
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the sources
+        uses: actions/checkout@v3
+      - name: Restore the dependencies@v1
+        run: npm ci
+      - name: Build
+        run: npm run all
