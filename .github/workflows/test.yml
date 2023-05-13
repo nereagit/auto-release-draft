@@ -1,4 +1,4 @@
-name: 'Test'
+name: Test
 on: # rebuild any PRs and main branch changes
   push:
     branches:
@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Get the sources
         uses: actions/checkout@v3
-      - name: Create a release deaft for a version tag
+      - name: Create a release draft for a version tag
         id: create-release-draft
         uses: ./
       - name: Print the URL of the release draft
